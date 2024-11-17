@@ -6,7 +6,7 @@ import time
 
 # Configure the LLM once and set it as a global variable
 genai.configure(api_key="AIzaSyB_F2c0L5FeP-tJpdb8XUDPfZ38VOAIGyI")
-model = genai.GenerativeModel("gemini-1.5-flash")
+model = genai.GenerativeModel("gemini-1.5-pro")
 
 CALLS = 15
 PERIOD = 70
@@ -21,7 +21,7 @@ def generate_response(prompt: str, documents: List[str]):
             # Rotate to the next API key
             current_key = "AIzaSyB_F2c0L5FeP-tJpdb8XUDPfZ38VOAIGyI"
             genai.configure(api_key=current_key)
-            model = genai.GenerativeModel("gemini-1.5-pro-001")
+            model = genai.GenerativeModel("gemini-1.5-pro")
             
             # Concatenate documents for context
             doc_text = " ".join(documents)
